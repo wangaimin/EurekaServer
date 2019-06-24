@@ -10,9 +10,9 @@
     </parent>
     <groupId>yzw.cn.mro.demo</groupId>
     <artifactId>eurekaserver</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>EurekaServer</name>
-    <description>Demo project for Spring Boot</description>
+    <description>EurekaServer</description>
 
     <!--以war打包，不以jar打包-->
     <!--<packaging>war</packaging>-->
@@ -28,11 +28,11 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
         <!--打包为war需要-->
         <!--<dependency>
@@ -41,6 +41,12 @@
         <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <version>2.0.6.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -64,4 +70,10 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://182.61.49.180:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
